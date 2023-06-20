@@ -1,48 +1,35 @@
 package views;
+
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
-
-public class ClienteNovo  extends JFrame implements ActionListener {
-
-    private JLabel janela;
+public class ClienteNovo extends JFrame implements ActionListener {
     private JLabel lblCliente;
-    private JLabel lblEmail;
     private JLabel lblTelefone;
- 
+    private JLabel lblEmail;
+
     private JTextField txtCliente;
-    private JTextField txtEmail;
     private JTextField txtTelefone;
+    private JTextField txtEmail;
 
     private JButton btnCadastro;
     private JButton btnCancela;
 
-    // cores
-    Color red = new Color(255,0,0);
-    Color green = new Color(0,128,0);
-   
-    public Cliente(String nome) {
-    	super(nome);
+    public ClienteNovo(String nome) {
+        super(nome);
         this.setBounds(100, 100, 400, 300);
         this.setLayout(null);
-        this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        this.janela = new JLabel("");
-        this.janela.setBounds(30, 140, 100, 30);
-        this.getContentPane().add(this.janela);
-        this.janela.setBackground(Color.white);
 
         this.lblCliente = new JLabel("Nome:");
         this.lblCliente.setBounds(30, 20, 80, 20);
         this.getContentPane().add(this.lblCliente);
 
-
-        this.lblEndereço = new JLabel("Telefone:");
-        this.lblEndereço.setBounds(30, 110, 80, 20);
-        this.getContentPane().add(this.lblEndereço);
+        this.lblTelefone = new JLabel("Telefone:");
+        this.lblTelefone.setBounds(30, 110, 80, 20);
+        this.getContentPane().add(this.lblTelefone);
 
         this.lblEmail = new JLabel("Email:");
         this.lblEmail.setBounds(30, 140, 80, 20);
@@ -52,8 +39,8 @@ public class ClienteNovo  extends JFrame implements ActionListener {
         this.txtCliente.setBounds(150, 20, 150, 20);
         this.getContentPane().add(this.txtCliente);
 
-        this.txtEndereço = new JTextField();
-        this.txtEndereço.setBounds(150, 110, 150, 20);
+        this.txtTelefone = new JTextField();
+        this.txtTelefone.setBounds(150, 110, 150, 20);
         this.getContentPane().add(this.txtTelefone);
 
         this.txtEmail = new JTextField();
@@ -62,41 +49,70 @@ public class ClienteNovo  extends JFrame implements ActionListener {
 
         this.btnCadastro = new JButton("Cadastrar");
         this.btnCadastro.setBounds(100, 200, 100, 30);
-        this.btnCadastro.setBackground(Color.green);
+        this.btnCadastro.setBackground(Color.GREEN);
         this.btnCadastro.addActionListener(this);
+        this.getContentPane().add(this.btnCadastro);
 
         this.btnCancela = new JButton("Cancelar");
         this.btnCancela.setBounds(210, 200, 100, 30);
-        this.btnCancela.setBackground(Color.red);
+        this.btnCancela.setBackground(Color.RED);
         this.btnCancela.addActionListener(this);
-
         this.getContentPane().add(this.btnCancela);
+
         this.getContentPane().setBackground(Color.LIGHT_GRAY);
-        this.getContentPane().add(this.btnCadastro);
-        this.getContentPane().setBackground(Color.LIGHT_GRAY);
+        this.setVisible(true);
     }
-    }
-    
-    @override 
-    public void actionPerformed(ActionEvent e){
-    	if (e.getSource() == btnCadastro) {
+
+    private void setDefaultCloseOperation(String exitOnClose) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void setVisible(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private JComponent getContentPane() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private void setLayout(Object object) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void setBounds(int i, int j, int k, int l) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == btnCadastro) {
             String cliente = txtCliente.getText();
             String telefone = txtTelefone.getText();
-            String endereco = txtEndereço.getText();
             String email = txtEmail.getText();
 
-            JOptionPane.showMessageDialog(this, "Nome: " + cliente + "\Telefone: " + telefone +
-                    "\nCPF: " + cpf + "\nEndereço: " + endereco + "\nEmail: " + email, "Cadastro realizado",
-                    JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showInputDialog(this);
 
             txtCliente.setText("");
-            txtDtNascimento.setText("");
-            txtCpf.setText("");
-            txtEndereço.setText("");
+            txtTelefone.setText("");
             txtEmail.setText("");
         } else if (e.getSource() == btnCancela) {
             this.dispose();
         }
-    	
+    }
+
+    private void dispose() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            new ClienteNovo(EXIT_ON_CLOSE);
+        });
     }
 }

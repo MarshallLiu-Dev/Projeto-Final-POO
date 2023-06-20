@@ -6,4 +6,5 @@
  *
  */
 module projetofinalpoo {
+	requires java.desktop;
 }
