@@ -1,6 +1,3 @@
-package views;
-
-import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
@@ -21,11 +18,8 @@ public class Menu extends JFrame implements ActionListener{
 
         // Criar os JMenus
         JMenu clienteMenu = new JMenu("Clientes");
-        JMenu petMenu = new JMenu("Pets");
+        JMenu petMenu = new JMenu("Pet");
         JMenu servicosMenu = new JMenu("Serviços");
-        JMenu produtosMenu = new JMenu("Produtos");
-        JMenu sobreMenu = new JMenu("Sobre");
-
 
         // Criar os JMenuItems
         JMenuItem clienteItem = new JMenuItem("Novo Cliente");
@@ -34,22 +28,17 @@ public class Menu extends JFrame implements ActionListener{
         // JMenuItem petItem = new JMenuItem("Todos");
         JMenuItem servicosItem = new JMenuItem("Novo Serviço");
         // JMenuItem servicosItem = new JMenuItem("Serviço em andamento");
-        JMenuItem produtosItem = new JMenuItem("Produtos");
-        JMenuItem sobreItem = new JMenuItem("Sobre");
+
 
         // Adicionar os JMenuItems aos JMenus
         clienteMenu.add(clienteItem);
         petMenu.add(petItem);
         servicosMenu.add(servicosItem);
-        produtosMenu.add(produtosItem);
-        sobreMenu.add(sobreItem);
 
         // Adicionar os JMenus à JMenuBar
         menuBar.add(clienteMenu);
         menuBar.add(petMenu);
         menuBar.add(servicosMenu);
-        menuBar.add(produtosMenu);
-        menuBar.add(sobreMenu);
 
         // Adicionar a JMenuBar ao JFrame
         frame.setJMenuBar(menuBar);
@@ -57,12 +46,15 @@ public class Menu extends JFrame implements ActionListener{
         frame.setVisible(true);
    
     
-
+        // Criação do botão de "Abrir"
+        // JButton abrirButton = new JButton("Abrir");
 
         // Configuração do evento de clique do botão "Abrir"
        clienteItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                Cliente janelaGUI = new Cliente(); 
+                // Código para abrir a GUI desejada
+                // MinhaJanelaGUI janelaGUI = new MinhaJanelaGUI();
+                Cliente janelaGUI = new Cliente("Cadastro"); 
                 janelaGUI.setVisible(true);
             }
         });
@@ -70,13 +62,17 @@ public class Menu extends JFrame implements ActionListener{
         // Configuração do evento de clique do botão "Abrir"
        petItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                Pet janelaGUI = new Pet(); 
-                ((Window) janelaGUI).setVisible(true);
+                // Código para abrir a GUI desejada
+                // MinhaJanelaGUI janelaGUI = new MinhaJanelaGUI();
+                Pet janelaGUI = new Pet("Animal"); 
+                janelaGUI.setVisible(true);
             }
         });
                 // Configuração do evento de clique do botão "Abrir"
       servicosItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                // Código para abrir a GUI desejada
+                // MinhaJanelaGUI janelaGUI = new MinhaJanelaGUI();
                 Servico janelaGUI = new Servico("Atendimento");
                 janelaGUI.setVisible(true);
             }

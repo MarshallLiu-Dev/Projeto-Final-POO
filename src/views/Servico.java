@@ -1,8 +1,8 @@
 package views;
 
-public class Cliente {
+public class Servico {
 
-    public Cliente(String string) {
+    public Servico(String string) {
     }
 
     public void setVisible(boolean b) {
